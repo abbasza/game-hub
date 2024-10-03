@@ -1,14 +1,17 @@
 import { useState } from 'react'
 import './App.css'
 import { Button, ButtonGroup, Grid, GridItem } from '@chakra-ui/react'
+import NavBar from './components/NavBar'
 
 function App() {
 
 
   return <Grid templateAreas={`"nav   nav" "aside main"`}>
-    <GridItem area='nav' bg='coral'>Nav</GridItem>
-    <GridItem area='aside' bg='gold'>Aside</GridItem>
-    <GridItem area='main' bg='dodgerblue'>Main</GridItem>
+    <GridItem area='nav' >
+      <NavBar></NavBar>
+      </GridItem>
+    <GridItem area='aside' >Aside</GridItem>
+    <GridItem area='main' >Main</GridItem>
     </Grid>
 }
 
