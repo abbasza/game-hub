@@ -1,6 +1,8 @@
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
+import { px } from "framer-motion";
+import GameCard from "./GameCard";
 //import { GameQuery } from "../App";
 //import useGames, { Platform } from "../hooks/useGames";
 //import { Genre } from "../hooks/useGenres";
@@ -28,9 +30,9 @@ const GameGrid = () => {
     return (
       <>
       {error && <Text>{error}</Text>}
-        <ul >
-            {games.map(game => <li key={game.id}>{game.name}</li>)}
-        </ul>
+        <SimpleGrid columns={3} spacing={10}>
+            {games.map(game => <GameCard key={game.id} game={game} />)}
+        </SimpleGrid>
       </>
     );
 }
